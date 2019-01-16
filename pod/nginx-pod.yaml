@@ -2,11 +2,11 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: two-containers
-  labels: nginx-test
+  labels: 
+    name : nginx-test
 spec:
 
-  restartPolicy: Never
-  select : nginx-test
+  restartPolicy: Always
 
   volumes:
   - name: shared-data
@@ -22,9 +22,9 @@ spec:
     ports:
     - containerPort: 80
 
-  - name: debian-container
-    image: debian
+  - name: install
+    image: busybox
     volumeMounts:
-    - name: shared-data
-      mountPath: /pod-data
+    - name: workDir
+      mountPath: /work-dir
     command: ["/bin/bash"]
