@@ -26,5 +26,5 @@ spec:
     image: busybox
     volumeMounts:
     - name: workDir
-      mountPath: /work-dir
+      mountPath: /
     command: ["/bin/bash"]
