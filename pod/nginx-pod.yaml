@@ -24,7 +24,5 @@ spec:
 
   - name: install
     image: busybox
-    volumeMounts:
-    - name: workDir
-      mountPath: /
+    
     command: ["/bin/bash"]
