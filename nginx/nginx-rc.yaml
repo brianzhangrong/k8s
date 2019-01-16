@@ -17,8 +17,8 @@ spec:
       - name: nginx-test
         image: docker.io/nginx
         volumeMounts:
-      - mountPath: /usr/share/nginx/html
-        name: nginx-data
+        - mountPath: /usr/share/nginx/html
+          name: nginx-data
         ports:
         - containerPort: 80
       volumes:
