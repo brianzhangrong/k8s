@@ -147,13 +147,14 @@ spec:
           - name: JOB_MANAGER_RPC_ADDRESS
             value: jobmanager
 ---
-kind:apiVersion: extensions/v1beta1
+apiVersion: v1
 kind: Pod
 metadata:
   name: taskmanager
   namespace : big-data
   labels:
     app: taskmanager
+  
 spec:
   containers:
   - name: taskmanager
@@ -165,5 +166,9 @@ spec:
     ports:
       - containerPort: 6121
       - containerPort: 6122
+  restartPolicy: Always
+---
+
+
 
 
