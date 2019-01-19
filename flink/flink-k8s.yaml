@@ -131,6 +131,7 @@ spec:
   template:
     metadata:
       name: taskmanager
+      namespace : big-data
       labels:
         app: taskmanager
     spec:
