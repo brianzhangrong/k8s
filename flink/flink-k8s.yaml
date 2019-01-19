@@ -146,6 +146,12 @@ spec:
           env:
           - name: JOB_MANAGER_RPC_ADDRESS
             value: jobmanager
+          volumeMounts:
+          - mountPath: /opt
+            name: inputFile
+          volumes:
+            - name: inputFile
+              hostPath : /opt
 ---
 apiVersion: v1
 kind: Pod
