@@ -234,7 +234,6 @@ subjects:
 roleRef:
   kind: ClusterRole
   name: nfs-provisioner-runner
-  namespace : big-data
   apiGroup: rbac.authorization.k8s.io
 ---
 kind: PersistentVolumeClaim
