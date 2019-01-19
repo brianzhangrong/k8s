@@ -93,32 +93,32 @@ spec:
 
 ---
 
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:  
-  name: taskmanager
-  namespace: big-data
-  labels:
-    app: taskmanager
-spec:
-  replicas: 5
-  template:
-    metadata:
-      labels:
-        app: taskmanager
-    spec:
-      containers:
-      - name: taskmanager
-        image:  flink
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort:  6121
-        - containerPort:  6122
-        args: ["taskmanager"]
-        env:
-        - name: JOB_MANAGER_RPC_ADDRESS
-          value: jobmanager
----
+# apiVersion: extensions/v1beta1
+# kind: Deployment
+# metadata:  
+#   name: taskmanager
+#   namespace: big-data
+#   labels:
+#     app: taskmanager
+# spec:
+#   replicas: 5
+#   template:
+#     metadata:
+#       labels:
+#         app: taskmanager
+#     spec:
+#       containers:
+#       - name: taskmanager
+#         image:  flink
+#         imagePullPolicy: IfNotPresent
+#         ports:
+#         - containerPort:  6121
+#         - containerPort:  6122
+#         args: ["taskmanager"]
+#         env:
+#         - name: JOB_MANAGER_RPC_ADDRESS
+#           value: jobmanager
+# ---
 apiVersion: v1
 kind: ReplicationController
 metadata:
@@ -146,6 +146,13 @@ spec:
           env:
           - name: JOB_MANAGER_RPC_ADDRESS
             value: jobmanager
+          volumeMounts:
+          - mountPath: /opt
+            name: input-file
+      volumes:
+      - name: input-file
+        hostPath : 
+          path : /opt
           
 ---
 apiVersion: v1
