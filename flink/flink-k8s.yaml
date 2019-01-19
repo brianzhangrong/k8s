@@ -177,7 +177,7 @@ spec:
     volumeMounts:
       - mountPath: /opt/file
         name: input-file
-    restartPolicy: Always
+  restartPolicy: Always
   volumes:
   - name: input-file
     hostPath : 
