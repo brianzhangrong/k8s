@@ -6,7 +6,7 @@ metadata:
   labels:
     app: jobmanager
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -56,6 +56,25 @@ spec:
     app: jobmanager
 
 ---
+# kind:apiVersion: extensions/v1beta1
+# kind: Pod
+# metadata:
+#   name: jobmanager
+#   namespace: big-data
+#   labels:
+#     app: jobmanager
+# spec:
+#   containers:
+#   - name: jobmanager
+#     image: <Image>
+#     resources:
+#       limits:
+#         memory: "128Mi"
+#         cpu: "500m"
+#     ports:
+#       - containerPort: <Port>
+
+# ---
 
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -99,3 +118,46 @@ spec:
         env:
         - name: JOB_MANAGER_RPC_ADDRESS
           value: jobmanager
+---
+apiVersion: extensions/v1beta1
+kind: ReplicationController
+metadata:
+  name: taskmanager
+  namespace : big-data
+spec:
+  replicas: 5
+  selector:
+    app: taskmanager
+  template:
+    metadata:
+      name: taskmanager
+      labels:
+        app: taskmanager
+    spec:
+      containers:
+        - name: taskmanager
+          image: flink
+          port:
+            - containerPort: 6121
+            - containerPort: 6122
+---
+kind:apiVersion: extensions/v1beta1
+kind: Pod
+metadata:
+  name: taskmanager
+  namespace : big-data
+  labels:
+    app: taskmanager
+spec:
+  containers:
+  - name: taskmanager
+    image: flink
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 6121
+      - containerPort: 6122
+
+
