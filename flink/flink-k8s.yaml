@@ -147,12 +147,12 @@ spec:
           - name: JOB_MANAGER_RPC_ADDRESS
             value: jobmanager
           volumeMounts:
-          - mountPath: /opt
+          - mountPath: /opt/file
             name: input-file
       volumes:
       - name: input-file
         hostPath : 
-          path : /opt
+          path : /opt/file
           
 ---
 apiVersion: v1
