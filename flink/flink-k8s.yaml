@@ -6,7 +6,7 @@ metadata:
   labels:
     app: jobmanager
 spec:
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -82,7 +82,7 @@ metadata:
   labels:
     app: taskmanager
 spec:
-  replicas: 3
+  replicas: 5
   template:
     metadata:
       labels:
