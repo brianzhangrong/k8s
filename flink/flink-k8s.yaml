@@ -147,7 +147,7 @@ spec:
           - name: JOB_MANAGER_RPC_ADDRESS
             value: jobmanager
           volumeMounts:
-          - mountPath: /mnt/file
+          - mountPath: /mnt
             name: input-file
       volumes:
       - name: input-file
@@ -175,7 +175,7 @@ spec:
     - name: JOB_MANAGER_RPC_ADDRESS
       value: jobmanager
     volumeMounts:
-      - mountPath: /mnt/file
+      - mountPath: /mnt
         name: input-file
   restartPolicy: Always
   volumes:
