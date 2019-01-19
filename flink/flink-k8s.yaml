@@ -151,8 +151,9 @@ spec:
             name: input-file
       volumes:
       - name: input-file
-        persistentVolumeClaim:
-          claimName: test-claim
+        nfs:
+          server: 192.168.2.156
+          path: /home/nfs
           
 ---
 apiVersion: v1
@@ -180,8 +181,9 @@ spec:
   restartPolicy: Always
   volumes:
   - name: input-file
-    persistentVolumeClaim:
-        claimName: test-claim
+    nfs:
+      server: 192.168.2.156
+      path: /home/nfs
 ---
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
