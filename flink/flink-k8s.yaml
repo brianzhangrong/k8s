@@ -188,7 +188,7 @@ apiVersion: storage.k8s.io/v1
 metadata:
   name: nfs
   namespace: big-data
-provisioner: example.com/nfs
+provisioner: fuseim.pri/ifs
 ---
 apiVersion: v1
 kind: ServiceAccount
