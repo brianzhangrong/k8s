@@ -147,8 +147,8 @@ spec:
           - name: JOB_MANAGER_RPC_ADDRESS
             value: jobmanager
           volumeMounts:
-          - mountPath: /opt
-            name: inputFile
+            - mountPath: /opt
+              name: inputFile
           volumes:
             - name: inputFile
               hostPath : /opt
@@ -173,8 +173,8 @@ spec:
       - containerPort: 6121
       - containerPort: 6122
     volumeMounts:
-       - mountPath: /opt
-         name: inputFile
+      - mountPath: /opt
+        name: inputFile
     volumes:
       - name: inputFile
         hostPath : /opt
