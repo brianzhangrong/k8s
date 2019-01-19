@@ -175,15 +175,13 @@ spec:
       - containerPort: 6121
       - containerPort: 6122
     volumeMounts:
-      - mountPath: /opt
+      - mountPath: /opt/file
         name: input-file
+    restartPolicy: Always
   volumes:
   - name: input-file
     hostPath : 
-      path : /opt
-
-      
-  restartPolicy: Always
+      path : /opt/file  
 ---
 
 
