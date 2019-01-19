@@ -171,8 +171,8 @@ spec:
       - mountPath: /opt
         name: inputFile
   volumes:
-    - name: inputFile
-      hostPath : /opt
+  - name: inputFile
+    hostPath : /opt
 
       
   restartPolicy: Always
