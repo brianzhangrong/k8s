@@ -236,7 +236,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: nfs-provisioner
-    namespace: monitoring
+    namespace: big-data
 roleRef:
   kind: ClusterRole
   name: nfs-provisioner-runner
