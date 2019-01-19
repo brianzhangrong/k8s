@@ -125,7 +125,7 @@ metadata:
   name: taskmanager
   namespace : big-data
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     app: taskmanager
   template:
