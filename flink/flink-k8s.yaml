@@ -137,9 +137,14 @@ spec:
       containers:
         - name: taskmanager
           image: flink
-          port:
+          imagePullPolicy : IfNotPresent
+          ports:
             - containerPort: 6121
             - containerPort: 6122
+          args: ["taskmanager"]
+          env:
+          - name: JOB_MANAGER_RPC_ADDRESS
+            value: jobmanager
 ---
 kind:apiVersion: extensions/v1beta1
 kind: Pod
