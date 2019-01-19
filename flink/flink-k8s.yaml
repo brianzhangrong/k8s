@@ -161,11 +161,19 @@ spec:
     image: flink
     resources:
       limits:
-        memory: "128Mi"
+        memory: "500Mi"
         cpu: "500m"
     ports:
       - containerPort: 6121
       - containerPort: 6122
+    volumeMounts:
+       - mountPath: /opt
+         name: inputFile
+    volumes:
+      - name: inputFile
+        hostPath : /opt
+
+      
   restartPolicy: Always
 ---
 
