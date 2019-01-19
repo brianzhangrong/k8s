@@ -196,12 +196,6 @@ metadata:
   name: nfs-provisioner
   namespace: big-data
 ---
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: nfs-provisioner
-  namespace: big-data
----
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -240,6 +234,7 @@ subjects:
 roleRef:
   kind: ClusterRole
   name: nfs-provisioner-runner
+  namespace : big-data
   apiGroup: rbac.authorization.k8s.io
 ---
 kind: PersistentVolumeClaim
@@ -254,7 +249,7 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 1Mi
+      storage: 20Mi
 
 
 
