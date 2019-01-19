@@ -169,9 +169,9 @@ spec:
       - containerPort: 6122
     volumeMounts:
       - mountPath: /opt
-        name: inputFile
+        name: input-file
   volumes:
-  - name: inputFile
+  - name: input-file
     hostPath : 
       path : /opt
 
