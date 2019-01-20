@@ -158,8 +158,9 @@ spec:
           - name: JOB_MANAGER_RPC_ADDRESS
             value: jobmanager
           volumeMounts:
-          - name: input-file
-            mountPath: "/opt/file"
+          - mountPath: /opt/file
+            name: input-file
+            
       volumes:
       - name: input-file
         persistentVolumeClaim:
@@ -185,8 +186,8 @@ spec:
     - name: JOB_MANAGER_RPC_ADDRESS
       value: jobmanager
     volumeMounts:
-    - name: input-file
-      mountPath: "/opt/file"
+     - mountPath: /opt/file
+       name: input-file
   restartPolicy: Always
   volumes:
   - name: input-file
