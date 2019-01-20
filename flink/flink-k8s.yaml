@@ -198,7 +198,7 @@ apiVersion: storage.k8s.io/v1
 metadata:
   name: nfs
   # name: managed-nfs-storage
-  namespace: big-data
+  # namespace: big-data
 provisioner: fuseim.pri/ifs
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
@@ -255,7 +255,7 @@ metadata:
   name: test-claim
   namespace: big-data
   annotations:
-    volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"
+    volume.beta.kubernetes.io/storage-class: "nfs"
 spec:
   accessModes:
     - ReadWriteMany
