@@ -262,7 +262,6 @@ spec:
   resources:
     requests:
       storage: 100Mi
-  storageClassName : nfs
 ---
 kind: Deployment
 apiVersion: extensions/v1beta1
