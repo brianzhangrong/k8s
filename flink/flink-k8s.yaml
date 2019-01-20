@@ -199,6 +199,8 @@ metadata:
   name: managed-nfs-storage
   namespace: big-data
 provisioner: fuseim.pri/ifs
+reclaimPolicy: delete
+volumeBindingMode: Immediate
 ---
 apiVersion: v1
 kind: ServiceAccount
