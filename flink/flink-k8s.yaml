@@ -259,6 +259,9 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
 ---
 kind: Deployment
 apiVersion: extensions/v1beta1
