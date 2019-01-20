@@ -199,7 +199,7 @@ metadata:
   name: nfs
   # name: managed-nfs-storage
   # namespace: big-data
-provisioner: fuseim.pri/ifs
+provisioner: example.com/nfs
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
 ---
@@ -254,14 +254,15 @@ apiVersion: v1
 metadata:
   name: input-claim
   namespace: big-data
-  annotations:
-    volume.beta.kubernetes.io/storage-class: managed-nfs-storage
+  # annotations:
+  #   volume.beta.kubernetes.io/storage-class: managed-nfs-storage
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 20Mi
+      storage: 100Mi
+  storageClassName : nfs
 ---
 kind: Deployment
 apiVersion: extensions/v1beta1
@@ -296,5 +297,18 @@ spec:
             server: 192.168.2.156
             path: /home/nfs
 ---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: input-claim
+spec:
+  capacity:
+    storage: 4Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    path: /home/nfs
+    server: 192.168.2.156
 
 
