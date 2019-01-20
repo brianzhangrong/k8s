@@ -159,7 +159,7 @@ spec:
             value: jobmanager
           volumeMounts:
           - name: input-file
-            mountPath: "/mnt"
+            mountPath: "/opt/file"
       volumes:
       - name: input-file
         persistentVolumeClaim:
@@ -186,7 +186,7 @@ spec:
       value: jobmanager
     volumeMounts:
     - name: input-file
-      mountPath: "/mnt"
+      mountPath: "/opt/file"
   restartPolicy: Always
   volumes:
   - name: input-file
