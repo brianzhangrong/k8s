@@ -296,19 +296,19 @@ spec:
           nfs:
             server: 192.168.2.156
             path: /home/nfs
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: input-claim
-spec:
-  capacity:
-    storage: 4Gi
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
-  nfs:
-    path: /home/nfs
-    server: 192.168.2.156
+# ---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: input-claim
+# spec:
+#   capacity:
+#     storage: 4Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Recycle
+#   nfs:
+#     path: /home/nfs
+#     server: 192.168.2.156
 
 
