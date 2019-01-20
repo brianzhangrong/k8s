@@ -163,7 +163,7 @@ spec:
       volumes:
       - name: input-file
         persistentVolumeClaim:
-        claimName: test-claim
+          claimName: test-claim
           
 ---
 apiVersion: v1
@@ -190,7 +190,7 @@ spec:
   restartPolicy: Always
   volumes:
   - name: input-file
-        persistentVolumeClaim:
+    persistentVolumeClaim:
         claimName: test-claim
 ---
 kind: StorageClass
