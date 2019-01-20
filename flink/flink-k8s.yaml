@@ -255,7 +255,7 @@ metadata:
   name: test-claim
   namespace: big-data
   annotations:
-    volume.beta.kubernetes.io/storage-class: "nfs"
+    volume.beta.kubernetes.io/storage-class: managed-nfs-storage
 spec:
   accessModes:
     - ReadWriteMany
