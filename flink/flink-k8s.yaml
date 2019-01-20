@@ -163,7 +163,7 @@ spec:
       volumes:
       - name: input-file
         persistentVolumeClaim:
-          claimName: test-claim
+          claimName: input-claim
           
 ---
 apiVersion: v1
@@ -191,7 +191,7 @@ spec:
   volumes:
   - name: input-file
     persistentVolumeClaim:
-        claimName: test-claim
+        claimName: input-claim
 ---
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
@@ -252,7 +252,7 @@ roleRef:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: test-claim
+  name: input-claim
   namespace: big-data
   annotations:
     volume.beta.kubernetes.io/storage-class: managed-nfs-storage
