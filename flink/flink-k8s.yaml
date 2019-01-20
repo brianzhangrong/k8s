@@ -120,7 +120,7 @@ spec:
 #           value: jobmanager
 # ---
 apiVersion: extensions/v1beta1
-kind: Deployment
+kind: ReplicationController
 metadata:
   name: taskmanager
   namespace : big-data
