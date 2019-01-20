@@ -199,7 +199,7 @@ metadata:
   name: nfs
   # name: managed-nfs-storage
   # namespace: big-data
-provisioner: example.com/nfs
+provisioner: fuseim.pri/ifs
 # reclaimPolicy: Delete
 # volumeBindingMode: Immediate
 ---
