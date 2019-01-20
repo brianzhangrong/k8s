@@ -200,8 +200,8 @@ metadata:
   # name: managed-nfs-storage
   # namespace: big-data
 provisioner: example.com/nfs
-reclaimPolicy: Delete
-volumeBindingMode: Immediate
+# reclaimPolicy: Delete
+# volumeBindingMode: Immediate
 ---
 apiVersion: v1
 kind: ServiceAccount
